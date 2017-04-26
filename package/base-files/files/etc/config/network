@@ -7,12 +7,14 @@ config interface loopback
 	option netmask	255.0.0.0
 
 config interface lan
-	option ifname	eth0
+	option ifname	eth0.1
 	option type 	bridge
-	option proto	static
-	option ipaddr	192.168.1.1
-	option netmask	255.255.255.0
-	option ip6assign 60
+	option proto	dhcp
+	option _orig_ifname 'eth0.1'
+        option _orig_bridge 'true'
+        option proto 'dhcp'
+        option hostname 'chainsensor7688'
+
 
 config globals globals
 	option ula_prefix auto
