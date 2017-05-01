@@ -33,6 +33,12 @@ ramips_setup_interfaces()
 	local board="$1"
 
 	case $board in
+	linkits7688 | \
+	linkits7688d)
+		ucidef_set_interface_lan "eth0.1"
+		ucidef_add_switch "switch0" "1" "1"
+		ucidef_add_switch_vlan "switch0" "1" "0 1 6t"
+		;;
 	3g150b|\
 	3g300m|\
 	a5-v11|\
@@ -43,8 +49,6 @@ ramips_setup_interfaces()
 	dcs-930|\
 	dcs-930l-b1|\
 	ht-tm02|\
-	linkits7688 | \
-	linkits7688d | \
 	m2m|\
 	microwrt|\
 	mpr-a2|\
