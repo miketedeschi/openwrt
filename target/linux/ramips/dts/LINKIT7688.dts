@@ -7,7 +7,7 @@
 	model = "MediaTek LinkIt Smart 7688";
 
 	chosen {
-		bootargs = "console=ttyS2,57600";
+		bootargs = "console=ttyS0,57600";
 	};
 
 	memory@0 {
@@ -136,7 +136,7 @@
 	gpio-leds {
 		compatible = "gpio-leds";
 		wifi {
-			label = "mediatek:orange:wifi";
+			label = "mediatek:amber:wifi";
 			gpios = <&wgpio 0 0>;
 			default-state = "on";
 		};
